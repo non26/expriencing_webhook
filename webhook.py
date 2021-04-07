@@ -6,7 +6,10 @@ app = Flask(__name__)
 def root():
     return "in the root!!"
 
-@app.route("/webhook", method=['POST'])
+@app.route("/webhook", methods=['POST'])
 def webHook():
     print(request.json)
     return Response(status=200)
+
+if __name__ == '__main__':
+    app.run()
